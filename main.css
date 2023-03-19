@@ -9,13 +9,20 @@ header{
 	justify-content: space-between;
 	align-items: center;
 	padding: 20px;
-	position: sticky;
-	background-color: #FFFFFF;
+	position: fixed;
+	background: none;
 	top: 0; 
-	z-index: 1;
-
+	left: 0;
+ 	right: 0;
+ 	z-index: 1;
+  	transition: box-shadow, background-color .25s ease;
 }
-.header-logo{
+
+.header__scrolled {
+  background-color: white;
+  box-shadow: 0 12px 34px -11px rgb(65 62 101 / 10%);
+}
+.header__logo{
 	height: 30px;
 	
 }
@@ -38,14 +45,22 @@ button{
 	cursor: pointer;
 	box-shadow: 0 16px 36px rgb(52 213 68 / 22%);
 	padding: 15px;
-	transition: background-color, 0.3s, ease-in;
+	
 }
-button:hover{
-	background-color:  #f6980c;
-	box-shadow: 0 16px 36px rgba(246 152 12 / 20%);
-}
+
 .about__image{
 	width: 500px;
+}
+@keyframes rotation {
+	0% {
+      transform: rotate(0);
+    }
+    50%{
+		transform: rotate(180deg)	
+	}
+	100%{
+		transform: rotate(360deg)	
+	}
 }
 .about__sun-image{
 	height: 100px;
@@ -58,7 +73,7 @@ button:hover{
 	position: relative;
 	justify-content:space-around;
 	align-items: center;
-	padding-top: 115px;
+	padding-top: 200px;
 	padding-bottom: 115px;
 	background: url("img/back.png") no-repeat;
 	background-size: cover;
@@ -108,7 +123,7 @@ button:hover{
 .card p{
 	font-size: 16px;
 	line-height: 22px;
-	opacity: 0,8;
+	opacity: 0.8;
 }
 .card__logo{
 	height: 100px;
@@ -166,11 +181,13 @@ button:hover{
 	font-size: 48px;
 }
 .features__savings-box{
+	height: 60%;
 	background: #dc5e26;
 	box-shadow: 0 6px 0 rgb(221 95 38 / 20%);
 	margin-right: 30px;
 }
 .features__rate-box{
+	height: 60%;
 	background: #1D263A;
 	box-shadow: 0 6px 0 rgb(29 38 58 / 20%);
 }
@@ -228,7 +245,7 @@ button:hover{
 }
 .promo__text button i{
 	font-size: 15px;
-	margin-left: 5px;
+	margin-left: 20px;
 }
 
 .form__container{
@@ -244,17 +261,19 @@ button:hover{
 	align-items: center;
 	justify-content: center;
 }
-.form__group{
-	display: flex;
-	flex-direction: column;
-	text-align: left;
-}
+
 .form h1{
 	font-size: 48px;	
 }
 .form p{
 	font-size: 18px;
 	opacity: 0.65;
+}
+
+.form__group{
+	display: flex;
+	flex-direction: column;
+	text-align: left;
 }
 .form form{
 	display: grid;
@@ -288,6 +307,12 @@ select{
 input{
 	outline: none;
 }
+button:hover{
+	background-color:  #f6980c;
+	box-shadow: 0 16px 36px rgba(246 152 12 / 20%);
+	transition: background-color, 0.3s, ease-in;
+}
+
 footer{
 	padding: 90px 20px;
 	font-size: 16px;
